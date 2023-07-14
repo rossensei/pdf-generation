@@ -36,6 +36,7 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
     Route::get('/clients/pdf/{client}', [ClientController::class, 'generate']);
+    Route::get('/clients/email/{client}', [ClientController::class, 'sendMail']);
     Route::resource('clients', ClientController::class);
 });
 
